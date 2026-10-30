@@ -1,139 +1,171 @@
 /* ==========================================================================
-   RHP FILMES — ULTRA-MINIMAL SCREENPLAY STYLESHEET
-   Austeridade Cinematográfica · Courier Screenplay · Zero Ruído
+   RHP FILMES — ULTRA-MINIMAL HOME & PAGES (WHITE CANVAS)
+   Fundo Branco Puro · Logo no Centro · Tipografia Courier Screenplay
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. CABEÇALHO MÍNIMO
+   1. HOME RADICALMENTE MÍNIMA (LOGO NO CENTRO)
    -------------------------------------------------------------------------- */
-.site-header {
-  border-bottom: 1px solid var(--border-light);
-  background: var(--bg-body);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  padding: 24px 0;
-}
-
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.logo-block {
+.home-viewport {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 3px;
-}
-
-.logo-main {
-  font-size: var(--text-xl);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: var(--text-main);
-  display: inline-flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
+  padding: 40px 24px;
+  text-align: center;
 }
 
-.logo-bracket {
+.home-center-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.home-logo {
+  font-size: clamp(2rem, 5vw, var(--text-hero));
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--text-main);
+  text-transform: uppercase;
+}
+
+.home-logo .bracket {
   color: var(--accent-director);
   font-weight: 400;
 }
 
-.logo-sub {
+.home-tagline {
   font-size: var(--text-xs);
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   color: var(--text-muted);
   text-transform: uppercase;
 }
 
-.site-nav {
+/* Links discretos sob o logo */
+.home-nav-minimal {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-light);
+}
+
+.home-nav-minimal a {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-secondary);
+  padding: 4px 8px;
+  transition: all var(--transition-fast);
+}
+
+.home-nav-minimal a:hover {
+  color: var(--text-main);
+  border-bottom: 1px solid var(--text-main);
+}
+
+/* Rodapé ultra-sutil da Home */
+.home-footer-meta {
+  position: absolute;
+  bottom: 24px;
+  font-size: 11px;
+  color: #999999;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   2. PÁGINAS INTERNAS (CABEÇALHO & ESTRUTURA BRANCA)
+   -------------------------------------------------------------------------- */
+.internal-header {
+  border-bottom: 1px solid var(--border-light);
+  padding: 24px 0;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.internal-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.internal-logo {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-main);
+}
+
+.internal-logo .bracket {
+  color: var(--accent-director);
+}
+
+.internal-nav {
   display: flex;
   gap: 16px;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.nav-link {
+.internal-nav a {
   font-size: var(--text-xs);
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--text-secondary);
-  padding: 4px 8px;
-  border-bottom: 1px solid transparent;
-  transition: all var(--transition-fast);
-}
-
-.nav-link:hover, .nav-link.active {
-  color: var(--text-main);
-  border-bottom-color: var(--accent-highlighter);
-}
-
-/* --------------------------------------------------------------------------
-   2. SEÇÕES & TIPOGRAFIA MÍNIMA
-   -------------------------------------------------------------------------- */
-.minimal-section {
-  padding: 70px 0;
-  border-bottom: 1px solid var(--border-light);
-}
-
-.section-label {
-  font-size: var(--text-xs);
   color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
-.section-label::before {
-  content: "//";
-  color: var(--accent-director);
+.internal-nav a:hover,
+.internal-nav a.active {
+  color: var(--text-main);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
-.minimal-title {
-  font-size: clamp(1.6rem, 3.2vw, var(--text-2xl));
+/* Conteúdo da Página Interna */
+.internal-content {
+  padding: 60px 0 100px 0;
+}
+
+.page-title {
+  font-size: clamp(1.8rem, 3.5vw, var(--text-3xl));
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 24px;
-  line-height: 1.25;
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
-/* --------------------------------------------------------------------------
-   3. BLOC O DO FILME: CIDADE INFINITA
-   -------------------------------------------------------------------------- */
-.film-spotlight {
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
+.page-tagline {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 36px;
 }
 
-/* A Foto do Adobe Portfolio com Moldura Cinematográfica */
-.film-image-wrapper {
+/* Moldura para a Foto do Filme no Fundo Branco */
+.still-frame {
   width: 100%;
   border: 1px solid var(--border-light);
-  background: var(--bg-surface);
-  position: relative;
-  overflow: hidden;
+  margin-bottom: 36px;
+  background: #fafafa;
 }
 
-.film-image-wrapper img {
+.still-frame img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
-  max-height: 580px;
-  filter: contrast(102%) brightness(98%);
 }
 
-.image-caption {
+.still-caption {
   padding: 10px 16px;
   font-size: var(--text-xs);
   color: var(--text-muted);
@@ -141,34 +173,15 @@
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
+  background: #ffffff;
 }
 
-.film-header-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.film-tagline {
-  font-size: var(--text-lg);
-  color: var(--accent-highlighter);
-  font-style: italic;
-  letter-spacing: 0.02em;
-}
-
-.film-description {
-  font-size: var(--text-base);
-  color: var(--text-secondary);
-  line-height: 1.75;
-  max-width: 820px;
-}
-
-/* Ficha Técnica Minimalista (2 Colunas / Tabela Limpa) */
+/* Tabela de Ficha Técnica Limpa */
 .specs-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 28px 0;
+  margin: 36px 0;
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
 }
@@ -183,18 +196,18 @@
 
 .specs-table th,
 .specs-table td {
-  padding: 12px 16px;
+  padding: 12px 14px;
   font-size: var(--text-sm);
   text-align: left;
   vertical-align: top;
 }
 
 .specs-table th {
-  width: 240px;
+  width: 220px;
   color: var(--text-muted);
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
 }
 
 .specs-table td {
@@ -202,12 +215,12 @@
   font-weight: 700;
 }
 
-/* Links para a Pesquisa */
-.research-links-block {
-  margin-top: 32px;
+/* Blocos de Pesquisa */
+.research-block {
+  margin-top: 40px;
   padding: 24px;
   border: 1px dashed var(--border-light);
-  background: var(--bg-surface);
+  background: #fafafa;
 }
 
 .research-title {
@@ -227,128 +240,59 @@
 }
 
 .research-item {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
   font-size: var(--text-sm);
-}
-
-.research-item::before {
-  content: "→";
-  color: var(--text-muted);
-}
-
-.research-item a {
   color: var(--text-main);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-color: var(--border-light);
+  line-height: 1.6;
 }
 
-.research-item a:hover {
-  color: var(--accent-highlighter);
-  text-decoration-color: var(--accent-highlighter);
-}
-
-.research-meta {
-  font-size: var(--text-xs);
-  color: var(--text-muted);
-  margin-left: 8px;
-}
-
-/* --------------------------------------------------------------------------
-   4. MANIFESTO MÍNIMO
-   -------------------------------------------------------------------------- */
-.manifesto-body {
-  font-size: var(--text-base);
-  color: var(--text-secondary);
-  line-height: 1.8;
-  max-width: 820px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.eixos-minimal-list {
-  margin: 28px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.eixo-row {
-  border-left: 2px solid var(--border-light);
-  padding-left: 20px;
-}
-
-.eixo-row.active {
-  border-left-color: var(--accent-director);
-}
-
-.eixo-row strong {
-  color: var(--text-main);
-  font-size: var(--text-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.research-item strong {
   display: block;
-  margin-bottom: 4px;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-main);
+  margin-bottom: 2px;
 }
 
-.eixo-row p {
-  font-size: var(--text-sm);
+.research-item p {
   color: var(--text-secondary);
+  font-size: var(--text-sm);
   margin: 0;
 }
 
-/* --------------------------------------------------------------------------
-   5. CONTATO ÚNICO
-   -------------------------------------------------------------------------- */
-.contact-single {
-  padding: 28px;
+/* Bloco de Contato */
+.contact-box {
+  margin-top: 48px;
+  padding: 24px;
   border: 1px solid var(--border-light);
-  background: var(--bg-surface);
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  gap: 12px;
-  max-width: 520px;
+  gap: 6px;
 }
 
-.contact-email {
-  font-size: var(--text-lg);
+.contact-box a {
+  font-size: var(--text-base);
   font-weight: 700;
   color: var(--text-main);
-  letter-spacing: 0.04em;
-  display: inline-block;
 }
 
-.contact-email:hover {
-  color: var(--accent-highlighter);
+.contact-box a:hover {
+  color: var(--accent-director);
 }
 
-.contact-sub {
+.contact-box span {
   font-size: var(--text-xs);
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
 }
 
-/* --------------------------------------------------------------------------
-   6. RODAPÉ MÍNIMO
-   -------------------------------------------------------------------------- */
-.site-footer {
-  padding: 48px 0;
-  background: var(--bg-body);
+/* Rodapé das páginas internas */
+.internal-footer {
+  padding: 36px 0;
   border-top: 1px solid var(--border-light);
   font-size: var(--text-xs);
   color: var(--text-muted);
-  letter-spacing: 0.1em;
   text-transform: uppercase;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  letter-spacing: 0.1em;
 }

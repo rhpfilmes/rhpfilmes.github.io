@@ -1,33 +1,34 @@
 /* ==========================================================================
-   RHP FILMES — SCREENPLAY CORE SYSTEM
+   RHP FILMES — SCREENPLAY CORE SYSTEM (WHITE CANVAS / PAPEL DE ROTEIRO)
    Tipografia: Courier Prime / Screenplay Monospace
-   Estética: Cinema Autoral de Resistência · Rigor de Máquina de Escrever
+   Estética: Cinema Autoral · Fundo Branco Puro · Tinta Tipográfica Negra
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-  /* Paleta Cinematográfica Chiaroscuro (Negativo & Papel de Roteiro) */
-  --bg-body: #090a0c;
-  --bg-surface: #101216;
-  --bg-surface-elevated: #161920;
-  --bg-badge: #1a1e26;
+  /* Fundo Branco Puro & Tinta Tipográfica de Máquina */
+  --bg-body: #ffffff;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #fafafa;
+  --bg-badge: #f4f4f4;
 
-  --text-main: #f2efe9;
-  --text-secondary: #9aa0a6;
-  --text-muted: #5f6368;
-  --text-inverse: #090a0c;
+  --text-main: #111111;
+  --text-secondary: #444444;
+  --text-muted: #777777;
+  --text-inverse: #ffffff;
 
   --accent-director: #c93b2b;      /* Vermelho fita bicolor / nota de diretor */
-  --accent-highlighter: #e5a93c;   /* Amarelo marcação de cena */
-  --border-light: rgba(242, 239, 233, 0.12);
-  --border-subtle: rgba(242, 239, 233, 0.06);
-  --border-solid: #232730;
+  --accent-hover: #000000;
+
+  --border-light: rgba(0, 0, 0, 0.12);
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-solid: #dcdcdc;
 
   /* Font Stack Canônica de Roteiro */
   --font-screenplay: 'Courier Prime', 'Courier Screenplay', 'Courier New', Courier, monospace;
 
-  /* Escala Tipográfica (Proporções de Pica / 10-pitch) */
+  /* Escala Tipográfica (10-pitch / Pica) */
   --text-xs: 0.75rem;     /* 12px */
   --text-sm: 0.875rem;    /* 14px */
   --text-base: 1rem;      /* 16px */
@@ -35,15 +36,13 @@
   --text-xl: 1.375rem;    /* 22px */
   --text-2xl: 1.75rem;    /* 28px */
   --text-3xl: 2.25rem;    /* 36px */
-  --text-hero: 3.25rem;   /* 52px */
+  --text-hero: 2.75rem;   /* 44px */
 
-  /* Espaçamentos e Grid */
-  --container-max: 1040px;
-  --space-unit: 8px;
+  --container-max: 880px;
   --transition-fast: 0.15s ease-out;
 }
 
-/* Reset Semântico & Caixa */
+/* Reset Semântico */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -63,21 +62,8 @@ body {
   font-family: var(--font-screenplay);
   line-height: 1.6;
   min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
   background-color: var(--bg-body);
-}
-
-/* Textura sutil de granulação de filme (CSS puro / SVG inline sem overhead) */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  pointer-events: none;
-  opacity: 0.025;
-  background-image: radial-gradient(var(--text-main) 1px, transparent 0);
-  background-size: 4px 4px;
-  z-index: 999;
+  color: var(--text-main);
 }
 
 /* Seleção de texto estilo fita de máquina de escrever */
@@ -86,7 +72,7 @@ body::before {
   color: var(--text-inverse);
 }
 
-/* Links & Botões Tipográficos */
+/* Links & Interações */
 a {
   color: var(--text-main);
   text-decoration: none;
@@ -94,28 +80,20 @@ a {
 }
 
 a:hover {
-  color: var(--accent-highlighter);
+  color: var(--accent-director);
 }
 
-button {
-  font-family: inherit;
-  background: none;
-  border: none;
-  color: inherit;
-  cursor: pointer;
-}
-
-/* Container Estrutural */
+/* Container de Leitura */
 .container {
   width: 100%;
   max-width: var(--container-max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: clamp(20px, 5vw, 48px);
-  padding-right: clamp(20px, 5vw, 48px);
+  padding-left: clamp(20px, 5vw, 40px);
+  padding-right: clamp(20px, 5vw, 40px);
 }
 
-/* Elementos de Notação de Roteiro */
+/* Notações e Rubricas de Roteiro */
 .slugline {
   font-size: var(--text-xs);
   text-transform: uppercase;
@@ -130,27 +108,4 @@ button {
 .slugline::before {
   content: "//";
   color: var(--accent-director);
-}
-
-.badge {
-  display: inline-block;
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 3px 8px;
-  border: 1px solid var(--border-light);
-  background: var(--bg-badge);
-  color: var(--text-secondary);
-}
-
-.badge-active {
-  border-color: var(--accent-highlighter);
-  color: var(--accent-highlighter);
-}
-
-.hairline {
-  height: 1px;
-  background: var(--border-light);
-  border: none;
-  margin: 40px 0;
 }
