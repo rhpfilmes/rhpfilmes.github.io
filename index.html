@@ -3,13 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RHP FILMES</title>
+  <title data-pt="RHP FILMES — Cinema Autoral" data-en="RHP FILMES — Arthouse Cinema">RHP FILMES — Cinema Autoral</title>
   <meta name="description" content="Produtora independente de cinema autoral. São Paulo.">
   
   <link rel="stylesheet" href="css/screenplay.css">
   <link rel="stylesheet" href="css/home.css">
+  <script src="js/lang.js" defer></script>
 </head>
 <body style="overflow: hidden;">
+
+  <!-- Seletor de Idioma Discreto -->
+  <div class="home-lang-fixed">
+    <button type="button" class="lang-switch" aria-label="Alternar idioma / Switch language">
+      <span class="lang-opt lang-opt-pt active">PT</span>
+      <span class="lang-sep">/</span>
+      <span class="lang-opt lang-opt-en">EN</span>
+    </button>
+  </div>
 
   <main class="home-viewport">
     
@@ -17,13 +27,16 @@
       <h1 class="home-logo">
         <span class="bracket">[</span> RHP FILMES <span class="bracket">]</span>
       </h1>
-      <p class="home-tagline">cinema autoral · são paulo</p>
+      <p class="home-tagline">
+        <span class="i18n-pt">cinema autoral · são paulo</span>
+        <span class="i18n-en">arthouse cinema · são paulo</span>
+      </p>
     </div>
 
     <nav class="home-nav-minimal" aria-label="Navegação Principal">
       <a href="cidade-infinita.html">[ CIDADE INFINITA ]</a>
       <a href="manifesto.html">[ MANIFESTO ]</a>
-      <a href="mailto:rhpfilmes@outlook.com">[ CONTATO ]</a>
+      <a href="mailto:rhpfilmes@outlook.com">[ <span class="i18n-pt">CONTATO</span><span class="i18n-en">CONTACT</span> ]</a>
     </nav>
 
     <footer class="home-footer-meta">

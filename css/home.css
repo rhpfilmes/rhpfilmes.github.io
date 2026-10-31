@@ -4,6 +4,65 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
+   0. I18N BILÍNGUE (PORTUGUÊS / INGLÊS) — CONTROLE SEM FLICKER & BOTÃO DISCRETO
+   -------------------------------------------------------------------------- */
+html:not([lang="en"]) .i18n-en {
+  display: none !important;
+}
+
+html[lang="en"] .i18n-pt {
+  display: none !important;
+}
+
+/* Seletor de Idioma Discreto & Minimalista */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-screenplay);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  padding: 4px 6px;
+  text-transform: uppercase;
+  transition: color var(--transition-fast);
+  line-height: 1;
+}
+
+.lang-switch:hover {
+  color: var(--text-main);
+}
+
+.lang-switch .lang-opt {
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.lang-switch .lang-opt.active {
+  color: var(--text-main);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.lang-switch .lang-sep {
+  color: var(--border-solid);
+  font-weight: 300;
+  margin: 0 1px;
+}
+
+/* Botão de idioma posicionado no canto superior direito da tela (Home) */
+.home-lang-fixed {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  z-index: 100;
+}
+
+/* --------------------------------------------------------------------------
    1. HOME RADICALMENTE MÍNIMA (LOGO NO CENTRO)
    -------------------------------------------------------------------------- */
 .home-viewport {
@@ -177,11 +236,11 @@
   background: #ffffff;
 }
 
-/* Tabela de Ficha Técnica Limpa */
+/* Tabela de Ficha Técnica Limpa & Compacta */
 .specs-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 36px 0;
+  margin: 28px 0;
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
 }
@@ -196,10 +255,11 @@
 
 .specs-table th,
 .specs-table td {
-  padding: 12px 14px;
+  padding: 8px 12px;
   font-size: var(--text-sm);
   text-align: left;
   vertical-align: top;
+  line-height: 1.45;
 }
 
 .specs-table th {
@@ -212,7 +272,7 @@
 
 .specs-table td {
   color: var(--text-main);
-  font-weight: 700;
+  font-weight: 400;
 }
 
 /* Blocos de Pesquisa */
@@ -263,17 +323,19 @@
 /* Bloco de Contato */
 .contact-box {
   margin-top: 48px;
-  padding: 24px;
+  padding: 20px 24px;
   border: 1px solid var(--border-light);
   display: inline-flex;
   flex-direction: column;
   gap: 6px;
+  background: #ffffff;
 }
 
 .contact-box a {
   font-size: var(--text-base);
-  font-weight: 700;
+  font-weight: 400;
   color: var(--text-main);
+  letter-spacing: 0.04em;
 }
 
 .contact-box a:hover {
@@ -283,8 +345,8 @@
 .contact-box span {
   font-size: var(--text-xs);
   color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  letter-spacing: 0.12em;
 }
 
 /* Rodapé das páginas internas */
