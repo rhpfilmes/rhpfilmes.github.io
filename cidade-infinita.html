@@ -7,8 +7,62 @@
   <meta name="description" content="Longa-metragem documentário de estreia da RHP Filmes. Direção de Roberto Herrera Peres.">
   
   <link rel="stylesheet" href="css/screenplay.css">
-  <link rel="stylesheet" href="css/home.css?v=2">
+  <link rel="stylesheet" href="css/home.css?v=20261031_0908">
   <script src="js/lang.js" defer></script>
+  
+  <style>
+    /* Hero Full-Bleed Edge-to-Edge (Ocupa 100% da Largura da Tela) */
+    .hero-fullbleed {
+      width: 100% !important;
+      max-width: 100% !important;
+      background: #000000 !important;
+      border-bottom: 1px solid var(--border-light, #e0e0e0);
+      overflow: hidden;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .hero-fullbleed-video-wrap {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: clamp(320px, 52vh, 620px);
+      position: relative;
+      overflow: hidden;
+      background: #000000 !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-fullbleed-video-wrap video {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center 35%;
+      display: block !important;
+      background: #000000 !important;
+    }
+
+    .hero-fullbleed-caption {
+      width: 100% !important;
+      padding: 12px 0;
+      font-size: var(--text-xs, 11px);
+      color: var(--text-muted, #737373);
+      border-top: 1px solid var(--border-light, #e0e0e0);
+      border-bottom: 1px solid var(--border-light, #e0e0e0);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: #ffffff;
+    }
+
+    .hero-fullbleed-caption .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  </style>
 </head>
 <body>
 
