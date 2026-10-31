@@ -84,23 +84,29 @@ html[lang="en"] .i18n-pt {
 }
 
 .home-logo {
-  font-size: clamp(2rem, 5vw, var(--text-hero));
+  display: inline-block;
+  white-space: nowrap;
+  font-size: clamp(1.25rem, 6vw, var(--text-hero));
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   color: var(--text-main);
   text-transform: uppercase;
+  line-height: 1.15;
+  max-width: 100%;
 }
 
 .home-logo .bracket {
   color: var(--accent-director);
   font-weight: 400;
+  display: inline-block;
 }
 
 .home-tagline {
-  font-size: var(--text-xs);
-  letter-spacing: 0.22em;
+  font-size: clamp(0.68rem, 2.5vw, var(--text-xs));
+  letter-spacing: clamp(0.1em, 2vw, 0.22em);
   color: var(--text-muted);
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 /* Links discretos sob o logo */
@@ -159,14 +165,18 @@ html[lang="en"] .i18n-pt {
 }
 
 .internal-logo {
-  font-size: var(--text-lg);
+  font-size: clamp(0.95rem, 4vw, var(--text-lg));
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   color: var(--text-main);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
 }
 
 .internal-logo .bracket {
   color: var(--accent-director);
+  font-weight: 400;
 }
 
 .internal-nav {
@@ -357,4 +367,46 @@ html[lang="en"] .i18n-pt {
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+
+/* --------------------------------------------------------------------------
+   4. AJUSTES RESPONSIVOS (MOBILE ESTREITO / TELAS PEQUENAS)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .home-viewport {
+    padding: 24px 16px;
+  }
+  
+  .home-center-brand {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  
+  .home-nav-minimal {
+    gap: 12px;
+    padding-top: 18px;
+  }
+  
+  .home-nav-minimal a {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding: 4px 6px;
+  }
+
+  .internal-header {
+    padding: 16px 0;
+  }
+
+  .internal-header-inner {
+    gap: 12px;
+  }
+
+  .internal-nav {
+    gap: 10px;
+  }
+
+  .internal-nav a {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
 }
