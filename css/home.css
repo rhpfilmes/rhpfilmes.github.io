@@ -220,6 +220,49 @@ html[lang="en"] .i18n-pt {
   margin-bottom: 36px;
 }
 
+/* Hero Cinematográfico Full-Bleed (Largura Total da Tela) */
+.hero-fullbleed {
+  width: 100%;
+  background: #000000;
+  border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.hero-fullbleed-video-wrap {
+  width: 100%;
+  height: clamp(320px, 52vh, 620px);
+  position: relative;
+  overflow: hidden;
+  background: #000000;
+}
+
+.hero-fullbleed-video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #000000;
+}
+
+.hero-fullbleed-caption {
+  padding: 12px 0;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: #ffffff;
+}
+
+.hero-fullbleed-caption .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 /* Moldura para a Foto do Filme no Fundo Branco */
 .still-frame {
   width: 100%;
