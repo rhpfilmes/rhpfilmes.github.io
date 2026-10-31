@@ -228,10 +228,12 @@ html[lang="en"] .i18n-pt {
   background: #fafafa;
 }
 
-.still-frame img {
+.still-frame img,
+.still-frame video {
   width: 100%;
   height: auto;
   display: block;
+  background: #000000;
 }
 
 .still-caption {
