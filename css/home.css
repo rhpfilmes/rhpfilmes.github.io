@@ -239,7 +239,8 @@ html[lang="en"] .i18n-pt {
 .hero-fullbleed-video-wrap video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
   display: block;
   background: #000000;
 }
